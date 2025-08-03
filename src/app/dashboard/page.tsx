@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -17,13 +17,11 @@ import {
   MessageSquare,
   Users,
   Zap,
-  Star,
-  ArrowRight,
   CheckCircle,
   AlertCircle
 } from 'lucide-react'
 import { InterviewSession, QuestionCategory } from '@/types'
-import { getCategoryDisplayName, getRatingColor } from '@/utils'
+import { getCategoryDisplayName } from '@/utils'
 
 // Mock data for demonstration
 const mockSessions: InterviewSession[] = [
@@ -83,8 +81,8 @@ const categoryStats = [
 ]
 
 export default function DashboardPage() {
-  const [sessions, setSessions] = useState<InterviewSession[]>(mockSessions)
-  const [stats, setStats] = useState(categoryStats)
+  const [sessions] = useState<InterviewSession[]>(mockSessions)
+  const [stats] = useState(categoryStats)
 
   const totalSessions = sessions.length
   const averageScore = sessions.length > 0 
@@ -380,7 +378,7 @@ export default function DashboardPage() {
                     <Zap className="h-5 w-5 text-blue-500 mt-0.5" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Try Technical Skills</p>
-                      <p className="text-xs text-gray-600">You haven't practiced this yet</p>
+                                             <p className="text-xs text-gray-600">You haven&apos;t practiced this yet</p>
                     </div>
                   </div>
                 </div>

@@ -1,15 +1,13 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { 
   Brain, 
   Target, 
   BarChart3, 
   Clock, 
-  Users, 
   Zap,
   Play,
-  Star,
   TrendingUp,
   MessageSquare
 } from 'lucide-react'

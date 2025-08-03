@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { AIAnalysis, Question } from '@/types'
+import { AIAnalysis } from '@/types'
 
 export async function POST(request: NextRequest) {
   try {
-    const { question, response } = await request.json()
+    const { question: _question, response: _response } = await request.json()
 
     // In a real implementation, this would call OpenAI API
     // For now, we'll return mock analysis

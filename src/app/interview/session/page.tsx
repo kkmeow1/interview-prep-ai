@@ -7,8 +7,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Progress } from '@/components/ui/progress'
 import { 
   ArrowLeft, 
-  Play, 
-  Pause, 
   SkipForward, 
   Mic, 
   MicOff,
@@ -34,7 +32,6 @@ export default function InterviewSessionPage() {
   const [sessionComplete, setSessionComplete] = useState(false)
   const [totalScore, setTotalScore] = useState(0)
   
-  const audioRef = useRef<HTMLAudioElement>(null)
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
   const chunksRef = useRef<Blob[]>([])
 
@@ -62,7 +59,7 @@ export default function InterviewSessionPage() {
       }
 
       mediaRecorder.onstop = async () => {
-        const audioBlob = new Blob(chunksRef.current, { type: 'audio/wav' })
+        const _audioBlob = new Blob(chunksRef.current, { type: 'audio/wav' })
         // In a real app, you'd send this to a speech-to-text service
         // For now, we'll simulate the transcription
         simulateTranscription()
@@ -166,7 +163,7 @@ export default function InterviewSessionPage() {
               <CheckCircle className="h-16 w-16 text-green-600 mx-auto mb-4" />
               <CardTitle className="text-3xl">Interview Complete!</CardTitle>
               <CardDescription>
-                Great job! You've completed your interview practice session.
+                Great job! You&apos;ve completed your interview practice session.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">

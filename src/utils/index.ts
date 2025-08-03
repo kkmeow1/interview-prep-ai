@@ -53,7 +53,7 @@ export const sampleQuestions: Question[] = [
   },
   {
     id: '8',
-    text: 'Describe a time when you had to work with someone you didn\'t get along with.',
+    text: 'Describe a time when you had to work with someone you didn&apos;t get along with.',
     category: 'teamwork',
     difficulty: 'hard',
     type: 'behavioral'
@@ -147,7 +147,7 @@ export function generateSessionTitle(category: QuestionCategory, difficulty: str
   return `${getCategoryDisplayName(category)} Interview - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} Level`;
 }
 
-export function analyzeResponseWithAI(question: Question, response: string): Promise<AIAnalysis> {
+export function analyzeResponseWithAI(_question: Question, _response: string): Promise<AIAnalysis> {
   // This would integrate with OpenAI API in a real implementation
   // For now, return a mock analysis
   return Promise.resolve({
